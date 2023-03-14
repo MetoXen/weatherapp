@@ -1,27 +1,25 @@
 
 import './App.scss';
-import axios from 'axios'
-import { useState, useEffect } from 'react';
+
+import { useState } from 'react';
+import locations from './data/locations';
+import CurrentWeather from './components/currentweather';
+import SelectedCity from './components/SelectedCity';
+
 
 function App() {
 
-  const [currentWeather, setCurrentWather] = useState(null)
-
-  const loadData = async () => {
-    const ApiData = await axios.get("https://api.open-meteo.com/v1/forecast?latitude=50.0515&longitude=14.2517&current_weather=true&timeyone=auto")
-    setCurrentWather(ApiData.data.current_weather)
-  }
-
-  useEffect(() => {
-    loadData()
-  }, [])
+const [selectedCity, setSelectedCity] = useState(null)
 
 
   return (
     <div className="App">
       <h1>Weather App</h1>
-      <h2>Prague Weather</h2>
-      {currentWeather && <div>Temp: {currentWeather.temperature}</div>}
+      {locations.map((location, i) =>{
+        return <CurrentWeather location={location} key={i} setSelectedCity={setSelectedCity}/>
+      })}
+      {selectedCity && <SelectedCity location={selectedCity} />}
+
     </div>
   );
 }
