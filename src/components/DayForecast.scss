@@ -1,0 +1,65 @@
+.dayforecast {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px lightgray;
+    border-radius: 1rem;
+    padding: 0.8rem;
+    margin: 1rem 0.5rem;
+    max-width: 11%;
+    // height: ;
+
+    &_date {
+        font-weight: 700;
+    }
+
+    &_main {
+        display: flex;
+        justify-content: space-between;
+
+
+
+        & > img {
+            width: 40%;
+        }
+
+
+    }
+    &_wind,
+    &_sunrise,
+    &_sunset {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+
+        &_span {
+            margin-left: 0.2rem;
+            font-weight: 700;
+        }
+    }
+
+    &_temperatures {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+        &_max,
+        &_min {
+            display: flex;
+            align-items: center;
+
+            & > img:first-of-type {
+                margin-right: -0.3rem;
+                opacity: 0.5;
+            }
+        }
+
+        
+    }
+
+}
+
+
+.icon {
+    height: 1.5rem;
+}
