@@ -1,12 +1,15 @@
 import axios from "axios"
 import { useState, useEffect} from 'react'
 import DayForecast from "./DayForecast"
+import Loader from "./Loader"
 import './SelectedCity.scss'
 
 
 const SelectedCity = ({ location }) => {
 
     const [dailyForecast, setDailyForecast] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
     const loadData = async () => {
         const ApiData = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,weathercode,windspeed_10m_max,winddirection_10m_dominant&timezone=auto`)
         const weatherData = []
@@ -21,20 +24,30 @@ const SelectedCity = ({ location }) => {
         
         }
         setDailyForecast(weatherData)
+        setIsLoading(false)
         
       }
     
       useEffect(() => {
-        loadData()
+         // Simulated slow internet 
+        if (location) {
+            setIsLoading(true)
+            setTimeout(()=> {
+                loadData()
+            }, 1500)
+        }
+        
       }, [location])
     return (
         <div className="selectedcity">
            <div className="selectedcity_title"> {location.city} Daily Forecast </div> 
            <div className="selectedcity_container" >
         {
-            dailyForecast && dailyForecast.map((day, i) =>{
+            !isLoading ? dailyForecast.map((day, i) =>{
                 return <DayForecast key={i} forecast={day}/>
             })
+            :
+            <Loader />
 
         }
 

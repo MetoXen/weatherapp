@@ -35,7 +35,7 @@ const DayForecast = ({ forecast }) => {
                             <span>{getTimeString(forecast.sunset)}</span>
                         </div>
 
-        <button onClick={() => console.table(forecast)}>data</button>
+        {/* <button onClick={() => console.table(forecast)}>data</button> */}
         </div>
 
     )

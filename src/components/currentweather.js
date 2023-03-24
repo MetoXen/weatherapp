@@ -5,6 +5,7 @@ import weatherType from '../Functions/WeatherType'
 import isDaytime from '../Functions/IsDaytime'
 import getTimeString from '../Functions/GetTimeString'
 import { useState, useEffect } from 'react';
+import Loader from './Loader'
 
 
 const CurrentWeather = ({ location,setSelectedCity, selectedCity }) => {
@@ -12,20 +13,24 @@ const CurrentWeather = ({ location,setSelectedCity, selectedCity }) => {
 const isSelected = selectedCity === null || location.city === selectedCity.city
 
     const [currentWeather, setCurrentWather] = useState(null)
+    const [isWeatherSet, setIsWeatherSet] = useState(false)
+    const [showWeather, setShowWeather] = useState(false)
 
     const loadData = async () => {
       const ApiData = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true&timezone=auto&daily=sunrise,sunset`)
+      console.log([location.city, isDaytime(ApiData.data.current_weather.time, ApiData.data.daily.sunrise[0], ApiData.data.daily.sunset[0])])
       setCurrentWather({
         temperature: ApiData.data.current_weather.temperature,
         windspeed: ApiData.data.current_weather.windspeed,
         windDirection: windDirection(ApiData.data.current_weather.winddirection),
-        type: weatherType(ApiData.data.current_weather.weathercode, isDaytime(ApiData.data.current_weather.time, ApiData.data.daily.sunrise[0], ApiData.data.daily.sunrise[0])),
+        type: weatherType(ApiData.data.current_weather.weathercode, isDaytime(ApiData.data.current_weather.time, ApiData.data.daily.sunrise[0], ApiData.data.daily.sunset[0])),
         time: getTimeString(ApiData.data.current_weather.time)
 
 
 
 
       })
+      setIsWeatherSet(true)
 
      
     }
@@ -33,13 +38,22 @@ const isSelected = selectedCity === null || location.city === selectedCity.city
   
   
     useEffect(() => {
-      loadData()
+      // Simulated slow internet 
+      setTimeout(() => {
+        loadData()
+      }, 1500)
+      
     }, [])
+
+    useEffect(() => {
+      setShowWeather(true)
+
+    }, [isWeatherSet])
 
     return (
         <>
 
-        {currentWeather &&
+        { currentWeather ?
              <div className={`currentWeather ${isSelected ?"": "inactive"}`} onClick={() => {setSelectedCity(location)}}>
               <div className="currentWeather_city">{location.city}</div>
               <div className='currentWeather_mainInfo'>
@@ -53,6 +67,11 @@ const isSelected = selectedCity === null || location.city === selectedCity.city
 
   
          </div>
+         :
+      
+          <Loader/>
+      
+         
         }
         
         </>
