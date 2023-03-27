@@ -14,7 +14,7 @@ const [selectedCity, setSelectedCity] = useState(null)
 
   return (
     <div className="App">
-      <h1>Weather App</h1>
+      <h1 id="top">Weather App</h1>
       <div className="locationContainer">
       {locations.map((location, i) =>{
       return <CurrentWeather location={location} key={i} setSelectedCity={setSelectedCity} selectedCity={selectedCity}/>
