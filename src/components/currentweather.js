@@ -12,6 +12,8 @@ const CurrentWeather = ({ location,setSelectedCity, selectedCity }) => {
 
 const isSelected = selectedCity === null || location.city === selectedCity.city
 
+
+
     const [currentWeather, setCurrentWather] = useState(null)
     const [isWeatherSet, setIsWeatherSet] = useState(false)
     const [showWeather, setShowWeather] = useState(false)
@@ -46,14 +48,16 @@ const isSelected = selectedCity === null || location.city === selectedCity.city
     }, [])
 
     useEffect(() => {
-      setShowWeather(true)
+     setTimeout(() => {
+       setShowWeather(true)
+     }, 2000);
 
     }, [isWeatherSet])
 
     return (
         <>
 
-        { currentWeather ?
+        { showWeather ?
              <div className={`currentWeather ${isSelected ?"": "inactive"}`} onClick={() => {setSelectedCity(location)}}>
               <div className="currentWeather_city">{location.city}</div>
               <div className='currentWeather_mainInfo'>
@@ -69,7 +73,7 @@ const isSelected = selectedCity === null || location.city === selectedCity.city
          </div>
          :
       
-          <Loader/>
+          <Loader animation={isWeatherSet}/>
       
          
         }
