@@ -1,13 +1,15 @@
+import  './Credits.scss'
+
 const Credits = () => {
     return (
         <div className="credits">
-            <h1>Credits</h1>
+            <h2>Credits</h2>
             <h2>API</h2>
             <p>This app uses API data from the Open-Meteo Weather Forecast API. Details of the API can be found at <a href="https://open-meteo.com/en/docs">open-meteo.com/en/docs</a>.</p>
             <h2>Icons</h2>
             <p>I would like to credit the creators of the following icons which can be found at:</p>
             <p>Flaticon.com (<a href="https://www.flaticon.com">link</a>)</p>
-            <div className="credits_flaticon">
+            <div className="credits_flaticons">
                 <div className="credits_flaticons_icon">
                     <img src={require('../img/WeatherIcons/sun.png')} />
                     <span><a href="https://www.flaticon.com/free-icons/sky" title="sky icons">Sky icons created by Stasy - Flaticon</a></span>
@@ -83,7 +85,7 @@ const Credits = () => {
             </div>
             <p>Google Material Icons (<a href="https://fonts.google.com/icons">link</a>)</p>
             <div className="credits_icons">
-                <img src={require('../img/Other/sunny.png')} />
+                
                 <img src={require('../img/Other/loading.png')} />
                 <img src={require('../img/Other/thermostat.png')} />
                 <img src={require('../img/Other/air.png')} />
