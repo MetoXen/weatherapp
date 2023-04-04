@@ -1,7 +1,16 @@
 {
   "files": {
-    "main.css": "/weatherapp/static/css/main.de67036d.css",
-    "main.js": "/weatherapp/static/js/main.eb70b168.js",
+    "main.css": "/weatherapp/static/css/main.e8386678.css",
+    "main.js": "/weatherapp/static/js/main.8a4ea5bc.js",
+    "static/media/fog.jpg": "/weatherapp/static/media/fog.26806383422bd1c11afa.jpg",
+    "static/media/snowy.jpg": "/weatherapp/static/media/snowy.26d0dbdad25730ab4e46.jpg",
+    "static/media/sunny.jpg": "/weatherapp/static/media/sunny.795e6b71b58e8e9802be.jpg",
+    "static/media/rainy.jpg": "/weatherapp/static/media/rainy.7f79df9578547c49446a.jpg",
+    "static/media/cloudy.jpg": "/weatherapp/static/media/cloudy.86eb0f01143078aa796d.jpg",
+    "static/media/partly-cloudy.jpg": "/weatherapp/static/media/partly-cloudy.4d908ba549c8c6c33fe8.jpg",
+    "static/media/partly-cloudy-night.jpg": "/weatherapp/static/media/partly-cloudy-night.e130a728b2b1662e6de7.jpg",
+    "static/media/clear-night.jpg": "/weatherapp/static/media/clear-night.49a83e71c298df56ca48.jpg",
+    "static/media/stormy.jpg": "/weatherapp/static/media/stormy.eef2c4ac8a53d37f8a20.jpg",
     "static/media/heavy-rain.png": "/weatherapp/static/media/heavy-rain.95892180f12c72aa8e39.png",
     "static/media/hot.png": "/weatherapp/static/media/hot.2de553afebf49adca5ae.png",
     "static/media/storm.png": "/weatherapp/static/media/storm.abea6aa30bc66915560e.png",
@@ -24,11 +33,11 @@
     "static/media/warning.png": "/weatherapp/static/media/warning.b1d3c5484a8cbb6991dd.png",
     "static/media/overcast.png": "/weatherapp/static/media/overcast.2f7df7cb1010225d7cbd.png",
     "index.html": "/weatherapp/index.html",
-    "main.de67036d.css.map": "/weatherapp/static/css/main.de67036d.css.map",
-    "main.eb70b168.js.map": "/weatherapp/static/js/main.eb70b168.js.map"
+    "main.e8386678.css.map": "/weatherapp/static/css/main.e8386678.css.map",
+    "main.8a4ea5bc.js.map": "/weatherapp/static/js/main.8a4ea5bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.de67036d.css",
-    "static/js/main.eb70b168.js"
+    "static/css/main.e8386678.css",
+    "static/js/main.8a4ea5bc.js"
   ]
 }
