@@ -17,9 +17,11 @@ const [displayCredits, setDisplayCredits] = useState(false)
   return (
     <div className="App">
       {(selectedCity && !displayCredits) &&<img className="App_img" src={require(`./img/Backgrounds/${selectedCity.backgroundImg.type.img}`)} />
-
-
       }
+      <div className="App_container">
+
+
+
       <h1 id="top">Weather App</h1>
       {displayCredits ?
 
@@ -44,7 +46,7 @@ const [displayCredits, setDisplayCredits] = useState(false)
       {selectedCity && <SelectedCity location={selectedCity} />}
     </>
  } 
-
+  </div>
     </div>
   );
 }

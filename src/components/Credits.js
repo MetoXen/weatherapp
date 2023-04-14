@@ -1,4 +1,4 @@
-import  './Credits.scss'
+import './Credits.scss'
 
 const Credits = () => {
     return (
@@ -91,6 +91,18 @@ const Credits = () => {
                 <img src={require('../img/Other/air.png')} />
                 <img src={require('../img/Other/up.png')} />
                 <img src={require('../img/Other/down.png')} />
+            </div>
+            <p>Background images were taken from <a href="https://www.pixabay.com">Pixabay.com</a>.</p>
+            <div className="credits_background">
+                <a href="https://pixabay.com/photos/tree-sun-sunshine-summer-meadow-2916763/"><img src={require('../img/Backgrounds/sunny.jpg')} alt="background image"/></a>
+                <a href="https://pixabay.com/photos/clouds-heaven-weather-3488632/"><img src={require('../img/Backgrounds/partly-cloudy.jpg')} alt="background image"/></a>
+                <a href="https://pixabay.com/photos/tree-clouds-fields-grass-832079/"><img src={require('../img/Backgrounds/cloudy.jpg')} alt="background image"/></a>
+                <a href="https://pixabay.com/photos/forest-trees-sun-rays-sunlight-fog-1072828/"><img src={require('../img/Backgrounds/fog.jpg')} alt="background image"/></a>
+                <a href="https://pixabay.com/photos/moon-trees-nature-field-meadow-7356371/"><img src={require('../img/Backgrounds/clear-night.jpg')} alt="background image"/></a>
+                <a href="https://pixabay.com/photos/cloudy-dark-full-moon-luna-moon-1869753/"><img src={require('../img/Backgrounds/partly-cloudy-night.jpg')} alt="background image"/></a>
+                <a href="https://pixabay.com/photos/umbrella-rainy-weather-background-4692572/"><img src={require('../img/Backgrounds/rainy.jpg')} alt="background image"/></a>
+                <a href="https://pixabay.com/photos/wintry-snow-firs-conifers-2993370/"><img src={require('../img/Backgrounds/snowy.jpg')} alt="background image"/></a>
+                <a href="https://pixabay.com/photos/flash-thunderstorm-ore-mountains-1455285/"><img src={require('../img/Backgrounds/stormy.jpg')} alt="background image"/></a>
             </div>
         </div>
     )
